@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root{
+    --pokedex-red: #FE1936;
+    --text-btn: #FFFFFF;
+}
+
+
+body{
+    font-family: 'Inter', sans-serif;
+}
