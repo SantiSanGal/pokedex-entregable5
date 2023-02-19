@@ -27,6 +27,7 @@ const PokeCard = ({ pokemon }) => {
       <header className={`pokecard__header bg-${poke?.types[0].type.name}`}>
         <img className={`pokecard__header-img`} src={poke?.sprites.other['official-artwork'].front_default} alt="" />
       </header>
+      <div className='pokecard__header-space'></div>
       <h2 className={`pokecard__name name-${poke?.types[0].type.name}`}>{poke?.name}</h2>
       <ul className='pokecard__container-type'>
         {
