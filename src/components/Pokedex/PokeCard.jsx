@@ -20,12 +20,14 @@ const PokeCard = ({ pokemon }) => {
     navigate(`/pokedex/${poke.id}`)
   }
 
+  console.log(poke?.types[0].type.name);
+
   return (
-    <article onClick={handleClick} className='pokecard'>
+    <article onClick={handleClick} className={`pokecard border-${poke?.types[0].type.name}`}>
       <header className={`pokecard__header bg-${poke?.types[0].type.name}`}>
-        <img className='pokecard__header-img' src={poke?.sprites.other['official-artwork'].front_default} alt="" />
+        <img className={`pokecard__header-img ${poke?.types[0].type.name}`} src={poke?.sprites.other['official-artwork'].front_default} alt="" />
       </header>
-      <h2 className='pokecard__name'>{poke?.name}</h2>
+      <h2 className={`pokecard__name name-${poke?.types[0].type.name}`}>{poke?.name}</h2>
       <ul className='pokecard__container-type'>
         {
           poke?.types.map(type => (
