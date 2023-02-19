@@ -38,7 +38,7 @@
 }
 
 .pokecard__hr{
-    border:1px solid rgba(180, 180, 180, 5);
+    background-color: rgba(180, 180, 180, 5);
     height: 1px;
     width: 85%;
 }
