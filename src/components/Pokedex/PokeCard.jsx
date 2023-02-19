@@ -25,7 +25,7 @@ const PokeCard = ({ pokemon }) => {
   return (
     <article onClick={handleClick} className={`pokecard border-${poke?.types[0].type.name}`}>
       <header className={`pokecard__header bg-${poke?.types[0].type.name}`}>
-        <img className={`pokecard__header-img ${poke?.types[0].type.name}`} src={poke?.sprites.other['official-artwork'].front_default} alt="" />
+        <img className={`pokecard__header-img`} src={poke?.sprites.other['official-artwork'].front_default} alt="" />
       </header>
       <h2 className={`pokecard__name name-${poke?.types[0].type.name}`}>{poke?.name}</h2>
       <ul className='pokecard__container-type'>
@@ -41,7 +41,7 @@ const PokeCard = ({ pokemon }) => {
           poke?.stats.map(stat => (
             <li className='pokecard__stats-data' key={stat.stat.url}>
               <span className='pokecard__stats-name'>{stat.stat.name}</span>
-              <span className='pokecard__stats-base'>{stat.base_stat}</span>
+              <span className={`pokecard__stats-base color-${poke?.types[0].type.name}`}>{stat.base_stat}</span>
             </li>
           ))
         }
