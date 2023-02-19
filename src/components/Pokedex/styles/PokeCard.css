@@ -29,11 +29,18 @@
 .pokecard__container-type{
     list-style: none;
     display: flex;
-    gap: 1 rem;
+    gap: 1rem;
+    height: 2rem;
 }
 
 .pokecard__type{
-    /* background-color: aquamarine; */
+    text-transform: capitalize;
+}
+
+.pokecard__hr{
+    border:1px solid rgba(180, 180, 180, 5);
+    height: 1px;
+    width: 85%;
 }
 
 .pokecard__container-stats{

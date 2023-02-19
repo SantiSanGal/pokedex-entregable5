@@ -12,6 +12,8 @@ const SelectTypes = ({setSelectValue}) => {
             .catch(err => console.log(err))
     }, [])
 
+    console.log(types);
+
     const handleChange = e => {
         setSelectValue(e.target.value)
     }

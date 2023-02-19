@@ -20,7 +20,7 @@ const PokeCard = ({ pokemon }) => {
     navigate(`/pokedex/${poke.id}`)
   }
 
-  console.log(poke?.types[0].type.name);
+  // console.log(poke?.types[0].type.name);
 
   return (
     <article onClick={handleClick} className={`pokecard border-${poke?.types[0].type.name}`}>
@@ -35,7 +35,9 @@ const PokeCard = ({ pokemon }) => {
           ))
         }
       </ul>
-      <hr />
+
+      <hr className='pokecard__hr'/>
+
       <ul className='pokecard__container-stats'>
         {
           poke?.stats.map(stat => (
