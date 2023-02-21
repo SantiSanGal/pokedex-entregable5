@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
-    margin-top: 60px;
+    margin-top: 70px;
     box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.15);
 }
 
@@ -149,6 +149,7 @@
 
 .pokeinfo__movements{
     margin-bottom: 50px;
+    margin-top: -20px;
 }
 
 .pokeinfo__movements-title{
