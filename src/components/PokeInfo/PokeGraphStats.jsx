@@ -40,7 +40,7 @@ export const PokeGraphStats = ({ poke }) => {
 
     return (
         <div>
-            <div style={{ width: '100%', height: '500px' }}>
+            <div style={{ width: '100%', height: '100%' }}>
                 <Bar data={data} options={options} />
             </div>
         </div>
