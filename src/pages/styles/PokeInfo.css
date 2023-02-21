@@ -32,15 +32,13 @@
 @media screen and (max-width: 650px){
     .pokeinfo__container{
         height: max-content;
+        margin-top: -20px;
     }
 }
 
 
 .pokeinfo__header{
     width: 100%;
-
-    background-color: aqua;
-
     height: 150px;
     display: flex;
     align-items: center;
@@ -87,7 +85,7 @@
 }
 
 .pokeinfo-id{
-    width: 70px;
+    width: max-content;
     height: 50px;
     font-weight: bold;
     display: grid;
@@ -539,6 +537,7 @@
 
 .bg-dark{
     background: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%);
+    color: #FFFFFF;
 }
 
 .border-dark{
