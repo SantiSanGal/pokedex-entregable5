@@ -89,7 +89,7 @@ const PokeInfo = () => {
                         </div>
 
                         <div className='pokeinfo__stats'>
-                            <PokeGraphStats poke={poke}/>
+                            <PokeGraphStats poke={poke} />
                             {/* <p>Stats</p>
                             {
                                 poke?.stats.map(stat => (
@@ -104,11 +104,16 @@ const PokeInfo = () => {
                 </div>
 
                 <div className='pokeinfo__movements'>
-                    {
-                        poke?.moves.map(move => (
-                            <span key={move.move.name}>{move.move.name}</span>
-                        ))
-                    }
+                    <div className="pokeinfo__movements-title">
+                    <h1>Movements</h1><div className='pokeinfo-name-hr'><hr /></div>
+                    </div>
+                    <div className='pokeinfo__movements-list'>
+                        {
+                            poke?.moves.map(move => (
+                                <span key={move.move.name}>{move.move.name}</span>
+                            ))
+                        }
+                    </div>
                 </div>
 
             </div>
