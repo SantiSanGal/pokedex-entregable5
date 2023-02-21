@@ -6,7 +6,7 @@ const Header = () => {
     <header className='header'>
       <div className='header-red'>
         <div className="header-img">
-          <img src="../../../public/images/pokedex.png" alt="" />
+          <img src="./images/pokedex.png" alt="" />
         </div>
       </div>
       <div className='header-black'></div>
