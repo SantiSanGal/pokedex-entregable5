@@ -26,7 +26,7 @@ const PokeInfo = () => {
             })
     }, [])
 
-    console.log(poke);
+    // console.log(poke);
 
     if (hasError) {
         return <h1> The Pokemon With Name "{id}" not found🍕🍔🍟🌭🍿</h1>
@@ -90,12 +90,12 @@ const PokeInfo = () => {
 
                         <div className='pokeinfo__stats'>
                             <PokeGraphStats poke={poke}/>
-                            <p>Stats</p>
+                            {/* <p>Stats</p>
                             {
                                 poke?.stats.map(stat => (
                                     <span key={stat.stat.name}>{stat.stat.name} {stat.base_stat}</span>
                                 ))
-                            }
+                            } */}
                         </div>
 
 
