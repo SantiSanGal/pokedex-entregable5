@@ -148,6 +148,8 @@
 @media screen and (max-width: 650px){
     .pokeinfo__main-type-abilities{
         gap: 1rem;
+        flex-direction: column;
+        height: max-content;
     }
 }
 
@@ -179,8 +181,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .pokeinfo__movements{
