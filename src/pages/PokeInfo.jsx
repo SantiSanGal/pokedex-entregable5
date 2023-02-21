@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Header from '../components/shared/Header'
+import './styles/PokeInfo.css'
+import { PokeGraphStats } from '../components/PokeInfo/PokeGraphStats'
 
 const PokeInfo = () => {
 
@@ -24,13 +26,13 @@ const PokeInfo = () => {
             })
     }, [])
 
-console.log(poke);
+    console.log(poke);
 
     if (hasError) {
         return <h1> The Pokemon With Name "{id}" not found🍕🍔🍟🌭🍿</h1>
     } else {
         return (
-            <div>
+            <div className='pokeinfo'>
                 <Header />
                 <div className='pokeinfo__container'>
                     <div className='pokeinfo__header'>
@@ -40,53 +42,75 @@ console.log(poke);
                     </div>
                     <div className='pokeinfo__main'>
 
-                        <div className='pokeinfo__main-id'>{poke?.id}</div>
+                        <div className='pokeinfo__main-id'>
+                            <span className='pokeinfo-id'>
+                                #{poke?.id}
+                            </span>
+                        </div>
 
                         <div className='pokeinfo__main-name'>
-                            <div><hr /></div>
+                            <div className='pokeinfo-name-hr'><hr /></div>
                             <h1>{poke?.name}</h1>
-                            <div><hr /></div>
+                            <div className='pokeinfo-name-hr'><hr /></div>
                         </div>
 
                         <div className='pokeinfo__main-height-weight'>
-                            <div className='pokeinfo-height'>{poke?.height}</div>
-                            <div className='pokeinfo-height'>{poke?.weight}</div>
+                            <div className='pokeinfo-height-weight'>
+                                <p>Height</p>
+                                <span>{poke?.height}</span>
+                            </div>
+                            <div className='pokeinfo-height-weight'>
+                                <p>Weight</p>
+                                <span>{poke?.weight}</span>
+                            </div>
                         </div>
 
                         <div className='pokeinfo__main-type-abilities'>
-                            <div className='pokeinfo-type'>
-                                {
-                                    poke?.types.map(type =>(
-                                        <span key={type.type.name}>{type.type.name}</span>
-                                    ))
-                                }
+                            <div className='pokeinfo-type-abilities'>
+                                <p>Types</p>
+                                <div>
+                                    {
+                                        poke?.types.map(type => (
+                                            <span key={type.type.name}>{type.type.name}</span>
+                                        ))
+                                    }
+                                </div>
                             </div>
-                            <div className='pokeinfo-abilities'>
-                                {
-                                    poke?.abilities.map(abilitie =>(
-                                        <span key={abilitie.ability.name}>{abilitie.ability.name}</span>
-                                    ))
-                                }
-                            </div>
-                            <div className='pokeinfo__stats'>
-                                {
-                                    poke?.stats.map(stat =>(
-                                        <span key={stat.stat.name}>{stat.stat.name} {stat.base_stat}</span>
-                                    ))
-                                }
+                            <div className='pokeinfo-type-abilities'>
+                                <p>Abilities</p>
+                                <div>
+                                    {
+                                        poke?.abilities.map(abilitie => (
+                                            <span key={abilitie.ability.name}>{abilitie.ability.name}</span>
+                                        ))
+                                    }
+                                </div>
                             </div>
                         </div>
 
-                        <div className='pokeinfo__movements'>
-                                {
-                                    poke?.moves.map(move =>(
-                                        <span key={move.move.name}>{move.move.name}</span>
-                                    ))
-                                }
+                        <div className='pokeinfo__stats'>
+                            <PokeGraphStats poke={poke}/>
+                            <p>Stats</p>
+                            {
+                                poke?.stats.map(stat => (
+                                    <span key={stat.stat.name}>{stat.stat.name} {stat.base_stat}</span>
+                                ))
+                            }
                         </div>
-                        
+
+
+
                     </div>
                 </div>
+
+                <div className='pokeinfo__movements'>
+                    {
+                        poke?.moves.map(move => (
+                            <span key={move.move.name}>{move.move.name}</span>
+                        ))
+                    }
+                </div>
+
             </div>
         )
     }
