@@ -20,8 +20,8 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <div className="home-img">
-                <img className='home-img' src="../../public/image 12.png" alt="" />
+            <div className="home-img-container">
+                <img className='home-img' src="./images/pokedex.png" alt="" />
             </div>
             <h2 className='home-tittle'>¡HI TRAINER!</h2>
             <p>Give me your name to start</p>
