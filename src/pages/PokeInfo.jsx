@@ -26,7 +26,7 @@ const PokeInfo = () => {
             })
     }, [])
 
-    // console.log(poke);
+    console.log(poke?.types[0].type.name);
 
     if (hasError) {
         return <h1> The Pokemon With Name "{id}" not found🍕🍔🍟🌭🍿</h1>
@@ -35,7 +35,7 @@ const PokeInfo = () => {
             <div className='pokeinfo'>
                 <Header />
                 <div className='pokeinfo__container'>
-                    <div className='pokeinfo__header'>
+                    <div className={`pokeinfo__header bg-${poke?.types[0].type.name}`}>
                         <div className='pokeinfo__header-img'>
                             <img src={poke?.sprites.other['official-artwork'].front_default} alt="" />
                         </div>
@@ -50,7 +50,7 @@ const PokeInfo = () => {
 
                         <div className='pokeinfo__main-name'>
                             <div className='pokeinfo-name-hr'><hr /></div>
-                            <h1>{poke?.name}</h1>
+                            <h1 className={`name-${poke?.types[0].type.name}`}>{poke?.name}</h1>
                             <div className='pokeinfo-name-hr'><hr /></div>
                         </div>
 
@@ -71,7 +71,7 @@ const PokeInfo = () => {
                                 <div>
                                     {
                                         poke?.types.map(type => (
-                                            <span key={type.type.name}>{type.type.name}</span>
+                                            <span className={`bg-${type.type.name}`} key={type.type.name}>{type.type.name}</span>
                                         ))
                                     }
                                 </div>
