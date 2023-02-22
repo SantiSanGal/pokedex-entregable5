@@ -44,4 +44,10 @@
     background: var(--pokedex-red);
     color: var(--text-btn);
     font-weight: bold;
+
+    transition: background-color 0.5s ease;
+}
+
+.home-btn:hover{
+    background-color: #FF6E31;
 }

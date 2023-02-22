@@ -15,9 +15,12 @@ const Pokedex = () => {
     const [pokemons, setPokemons] = useState()
     const [selectValue, setSelectValue] = useState('allpokemons')
 
+    const [pokeInit, setPokeInit] = useState(0)
+    const [pokeLast, setPokeLast] = useState(10)
+
     useEffect(() => {
         if (selectValue == 'allpokemons') {
-            const url = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0'
+            const url = `https://pokeapi.co/api/v2/pokemon?limit=${pokeLast}&offset=${pokeInit}`
             axios.get(url)
                 .then(res => setPokemons(res.data))
                 .catch(err => console.log(err))
@@ -29,13 +32,24 @@ const Pokedex = () => {
                 })
                 .catch(err => console.log(err))
         }
-    }, [selectValue])
+    }, [selectValue, pokeInit])
 
     const handleSubmit = e => {
         e.preventDefault()
         const inputValue = e.target.pokemon.value.trim().toLowerCase()
         navigate(`/pokedex/${inputValue}`)
         e.target.pokemon.value = ''
+    }
+
+    const handlePaginationPrev = e =>{
+        pokeInit == 0 ? '' :
+            setPokeInit(pokeInit-10);
+            setPokeLast(pokeLast-10);
+    }
+
+    const handlePaginationNext = e =>{
+        setPokeInit(pokeInit+10);
+        setPokeLast(pokeLast+10);
     }
 
     console.log(pokemons);
@@ -60,6 +74,13 @@ const Pokedex = () => {
                         />
                     ))
                 }
+            </div>
+            <div className='pokedex__pagination'>
+                {
+                    pokeInit == 0 ? '' :
+                    <button className='pokedex__pagination-btn-prev' id='prev' onClick={handlePaginationPrev}>&lt;</button>
+                }
+                <button className='pokedex__pagination-btn-next' id='next' onClick={handlePaginationNext}>&gt;</button>
             </div>
         </div>
     )

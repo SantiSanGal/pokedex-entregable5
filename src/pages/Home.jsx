@@ -26,7 +26,7 @@ const Home = () => {
             <h2 className='home-tittle'>¡HI TRAINER!</h2>
             <p>Give me your name to start</p>
             <form onSubmit={handleSubmit}>
-                <input className='home-input' id="name" type="text" placeholder='Enter your name' />
+                <input className='home-input' id="name" type="text" placeholder=' Enter your name' />
                 <button className='home-btn'>Start</button>
             </form>
             <Footer />
